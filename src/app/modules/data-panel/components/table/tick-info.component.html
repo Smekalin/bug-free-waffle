@@ -1,0 +1,32 @@
+<table tuiTable class="table" [columns]="columns">
+  <thead>
+    <tr tuiThGroup>
+      <th tuiTh *ngFor="let columnName of columns" [resizable]="true">
+        {{ columnName }}
+      </th>
+    </tr>
+  </thead>
+  <tbody tuiTbody [data]="tickInfoList">
+    <tr *ngFor="let item of tickInfoList" tuiTr>
+      <td *tuiCell="'id'" tuiTd>
+        {{ item.id }}
+      </td>
+
+      <td *tuiCell="'int'" tuiTd>
+        {{ item.int }}
+      </td>
+
+      <td *tuiCell="'float'" tuiTd>
+        {{ item.float }}
+      </td>
+
+      <td *tuiCell="'color'" tuiTd [style.background]="item.color">
+        {{ item.color }}
+      </td>
+
+      <td *tuiCell="'child'" tuiTd>
+        <app-child-table [tableData]="[item.child]"> </app-child-table>
+      </td>
+    </tr>
+  </tbody>
+</table>

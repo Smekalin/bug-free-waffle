@@ -1,0 +1,20 @@
+<table tuiTable class="table" [columns]="columns">
+  <thead>
+    <tr tuiThGroup>
+      <th tuiTh *ngFor="let columnName of columns">
+        {{ columnName }}
+      </th>
+    </tr>
+  </thead>
+  <tbody tuiTbody [data]="tableData">
+    <tr *ngFor="let child of tableData" tuiTr>
+      <td *tuiCell="'id'" tuiTd>
+        {{ child.id }}
+      </td>
+
+      <td *tuiCell="'color'" tuiTd [style.background]="child.color">
+        {{ child.color }}
+      </td>
+    </tr>
+  </tbody>
+</table>

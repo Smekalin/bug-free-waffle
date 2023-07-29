@@ -1,0 +1,20 @@
+<div class="wrapper">
+  <tui-input-number class="input" [precision]="0" [min]="0" [formControl]="timerValueControl"
+    >Timer, ms</tui-input-number
+  >
+
+  <tui-input-number
+    class="input"
+    [precision]="0"
+    [min]="0"
+    [max]="4000000"
+    [formControl]="arraySizeControl">
+    array size
+  </tui-input-number>
+
+  <tui-input-tag class="input" [formControl]="additionalIdsControl"> Additional ids </tui-input-tag>
+</div>
+
+<div *ngIf="calculatedData$ | async as data">
+  <app-tick-info [tickInfoList]="data"></app-tick-info>
+</div>
